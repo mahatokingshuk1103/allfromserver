@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-django-app-ingress
+spec:
+  rules:
+    - host: kingshuk.shop  # Replace with your desired hostname or domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-django-app-service
+                port:
+                  number: 80
+
